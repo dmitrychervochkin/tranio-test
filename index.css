@@ -44,6 +44,15 @@ body {
     transform: translateY(40px) scale(0.97);
     animation: fadeInUp 0.5s forwards;
 }
+.no-results{
+    position: absolute;
+    left: 50%;
+    background-color: white;
+    padding: 12px 24px;
+    border-radius: 10px;
+    border: 1px solid #d1d5db;
+    transform: translateX(-50%);
+}
 
 @keyframes fadeInUp {
     to {

@@ -695,18 +695,18 @@ const $search = document.getElementById('search');
 
 function getFilteredSortedProducts() {
     let result = products.slice();
+    const q = $search.value.trim().toLowerCase();
 
     if ($category.value) {
         result = result.filter(p => p.category === $category.value);
     }
 
-    const q = $search.value.trim().toLowerCase();
-    if (q) {
+    if (q || q === '') {
         result = result.filter(p =>
             p.name.toLowerCase().includes(q) ||
             p.description.toLowerCase().includes(q)
         );
-    }
+    } 
 
     switch ($sort.value) {
         case 'price-asc': result.sort((a, b) => a.price - b.price); break;
@@ -717,6 +717,7 @@ function getFilteredSortedProducts() {
         case 'name-desc': result.sort((a, b) => b.name.localeCompare(a.name)); break;
         default: break;
     }
+
     return result;
 }
 
@@ -729,6 +730,15 @@ function getImageSrc(img) {
 function renderProducts() {
     const list = getFilteredSortedProducts();
     $grid.innerHTML = '';
+
+    if(list.length === 0){
+        const noResults = document.createElement('div');
+        noResults.textContent = 'Нет результатов!'
+        noResults.className = 'no-results';
+
+        $grid.appendChild(noResults);
+    }
+
     list.forEach((p, i) => {
         const card = document.createElement('div');
         card.className = 'card';
