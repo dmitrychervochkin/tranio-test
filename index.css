@@ -74,24 +74,24 @@ body {
     font-weight: 600;
     margin: 0 0 6px 0;
 }
-.card__desc {
+.card__description {
     font-size: 14px;
     color: #555;
     margin-bottom: 10px;
     flex: 1;
 }
-.card__meta {
+.card__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 15px;
     margin-top: 10px;
 }
-.card__price {
+.card__footer--price {
     font-weight: 700;
     color: #1a73e8;
 }
-.card__rating {
+.card__footer--rating {
     color: #fbbf24;
     font-weight: 600;
 }

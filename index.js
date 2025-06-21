@@ -659,12 +659,6 @@ const categories = [
     "Cameras"
 ];
 
-const style = document.createElement('style');
-style.textContent = `
-
-`;
-document.head.appendChild(style);
-
 document.body.innerHTML = `
     <div class="header">
         <h1>Каталог товаров</h1>
@@ -731,6 +725,7 @@ function getImageSrc(img) {
     if (window.innerWidth <= 1024) return img.tablet;
     return img.desktop;
 }
+
 function renderProducts() {
     const list = getFilteredSortedProducts();
     $grid.innerHTML = '';
@@ -743,10 +738,10 @@ function renderProducts() {
             <div class="card__body">
                 <div class="card__category">${p.category}</div>
                 <div class="card__title">${p.name}</div>
-                <div class="card__desc">${p.description}</div>
-                <div class="card__meta">
-                    <span class="card__price">${p.price.toLocaleString('ru-RU', {style:'currency',currency:'USD'})}</span>
-                    <span class="card__rating">★ ${p.rating.toFixed(1)}</span>
+                <div class="card__description">${p.description}</div>
+                <div class="card__footer">
+                    <span class="card__footer--price">${p.price.toLocaleString('ru-RU', {style:'currency',currency:'USD'})}</span>
+                    <span class="card__footer--rating">★ ${p.rating.toFixed(1)}</span>
                 </div>
             </div>
         `;
