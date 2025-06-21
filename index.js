@@ -659,12 +659,6 @@ const categories = [
     "Cameras"
 ];
 
-const style = document.createElement('style');
-style.textContent = `
-
-`;
-document.head.appendChild(style);
-
 document.body.innerHTML = `
     <div class="header">
         <h1>Каталог товаров</h1>
