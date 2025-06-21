@@ -23,9 +23,9 @@
 ✅ Способ через Live Server (рекомендуемый)
 
 Если вы используете VS Code:
-	1.	Установите расширение Live Server
-	2.	Откройте папку проекта в VS Code
-	3.	Кликните правой кнопкой на index.html → Open with Live Server
+1.	Установите расширение Live Server
+2.	Откройте папку проекта в VS Code
+3.	Кликните правой кнопкой на index.html → Open with Live Server
  
 ```bash
 git clone https://github.com/dmitrychervochkin/tranio-test.git
